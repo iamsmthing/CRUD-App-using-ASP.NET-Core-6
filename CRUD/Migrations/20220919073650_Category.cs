@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace BulkyBookWeb.Migrations
+namespace CRUD.Migrations
 {
     /// <inheritdoc />
     public partial class Category : Migration
