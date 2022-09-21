@@ -1,0 +1,39 @@
+﻿
+@model IEnumerable<Category>;
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h1 style="display:flex;justify-content: center;">Category List</h1>
+<a type="button" class="btn btn-primary btn-lg" asp-controller="Category" asp-action="Create">Create a Category + </a>
+
+<div class="card bg-white text-black">
+    <div class="card-body" style="display:flex;justify-content: space-between;">
+        <h1>Customer Names</h1>
+        <h1>Display Orders</h1>
+        <h1>Edit Details</h1>
+    </div>
+</div><br/>
+@foreach(var x in Model){
+    @*<h2 style="color:red;">Categories:@x.Name</h2>
+    <h2 style="color:aqua;">Display order:@x.DisplayOrder</h2>
+    <br>*@
+    <div class="card bg-dark text-white" >
+        <div class="card-body" style="display:flex;justify-content: space-between;">
+            <h3>@x.Name</h3>
+            <h3>@x.DisplayOrder</h3>
+            <a class="btn btn-info btn-lg" asp-controller="Category" asp-action="Edit" asp-route-id="@x.Id">
+                <span class="glyphicon glyphicon-edit"></span> Edit
+            </a>
+            <a  class="btn btn-default btn-sm" asp-controller="Category" asp-action="Delete" asp-route-id="@x.Id">
+                <span class="glyphicon glyphicon-trash"></span> Trash
+            </a>
+        </div>
+    </div>
+    <br/>
+
+}
+
+
+

@@ -1,0 +1,36 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Edit Category</h1>
+
+
+<form method="POST" asp-action="DeletePOST">
+    <input asp-for="Id" hidden/>
+    <div class="mb-3">
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" type="text" class="form-control" disabled id="email" placeholder="Enter the Customer name">
+        
+    </div>
+    <div class="mb-3">
+        <label asp-for="DisplayOrder">Display Order:</label>
+        <input asp-for="DisplayOrder" type="text" class="form-control" disabled id="pwd" placeholder="Enter Number of Orders">
+        
+    </div>
+   
+    <center><button type="submit" class="btn btn-dark" style="color:white;justify-content:center;align-items:center;">Delete</button>
+        <a class="btn btn-dark" style="color:white;" asp-controller="Category" asp-action="Index">Back to Category List</a>
+    </center>
+    
+</form>
+
+
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+
+    }
+}
+
